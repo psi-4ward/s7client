@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>datatypes.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="S7Client.html">S7Client</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="S7Client.html#autoConnect">autoConnect</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="S7Client.html#connect">connect</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="S7Client.html#disconnect">disconnect</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="S7Client.html#getCpuInfo">getCpuInfo</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="S7Client.html#getPlcDateTime">getPlcDateTime</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="S7Client.html#isConnected">isConnected</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="S7Client.html#readDB">readDB</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="S7Client.html#readVar">readVar</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="S7Client.html#readVars">readVars</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="S7Client.html#writeVar">writeVar</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="S7Client.html#writeVars">writeVars</a></span></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-datatypes.html">datatypes</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">datatypes.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const snap7 = require('node-snap7').S7Client();
+/**
+ * @module datatypes
+ */
+
+/**
+ * S7Client Datatype
+ *
+ * @typedef {object} S7ClientDatatype
+ * @property {number} bytes - Number of bytes
+ * @property {function} parser - Convert Buffer to {bool|number|string}
+ * @property {function} formatter - Convert {bool|number|string} to Buffer
+ * @property {number} S7WordLen - S7WL type
+ */
+
+/**
+ * BOOL
+ * @type {S7ClientDatatype}
+ */
+module.exports.BOOL = {
+  bytes: 1,
+  parser: (buffer, offset = 0, bit = 0) => +buffer.readUInt8(offset) >> bit &amp; 1 === 1,
+  formatter: v => new Buffer([v ? 0x01 : 0x00]),
+  S7WordLen: snap7.S7WLBit
+};
+
+/**
+ * BYTE
+ * @type {S7ClientDatatype}
+ */
+module.exports.BYTE = {
+  bytes: 1,
+  parser: (buffer, offset = 0) => buffer.readUInt8(offset),
+  formatter: v => {
+    const b = new Buffer(1);
+    b.writeUInt8(v);
+    return b;
+  },
+  S7WordLen: snap7.S7WLByte
+};
+
+/**
+ * WORD
+ * @type {S7ClientDatatype}
+ */
+module.exports.WORD = {
+  bytes: 2,
+  parser: (buffer, offset = 0) => buffer.readUInt16BE(offset),
+  formatter: v => {
+    const b = new Buffer(2);
+    b.writeUInt16BE(v);
+    return b;
+  },
+  S7WordLen: snap7.S7WLWord
+};
+
+/**
+ * DWORD
+ * @type {S7ClientDatatype}
+ */
+module.exports.DWORD = {
+  bytes: 4,
+  parser: (buffer, offset = 0) => buffer.readUInt32BE(offset),
+  formatter: v => {
+    const b = new Buffer(4);
+    b.writeUInt32BE(v);
+    return b;
+  },
+  S7WordLen: snap7.S7WLWord
+};
+
+/**
+ * CHAR
+ * @type {S7ClientDatatype}
+ */
+module.exports.CHAR = {
+  bytes: 1,
+  parser: (buffer, offset = 0) => buffer.toString('ascii', offset, offset + 1),
+  formatter: v => {
+    const b = new Buffer(4);
+    b.write(v, 0, 'ascii');
+    return b;
+  },
+  S7WordLen: snap7.S7WLDWord
+};
+
+/**
+ * INT
+ * @type {S7ClientDatatype}
+ */
+module.exports.INT = {
+  bytes: 2,
+  parser: (buffer, offset = 0) => buffer.readInt16BE(offset),
+  formatter: v => {
+    const b = new Buffer(2);
+    b.writeInt16BE(v);
+    return b;
+  },
+  S7WordLen: snap7.S7WLWord
+};
+
+/**
+ * DINT
+ * @type {S7ClientDatatype}
+ */
+module.exports.DINT = {
+  bytes: 4,
+  parser: (buffer, offset = 0) => buffer.readInt32BE(offset),
+  formatter: v => {
+    const b = new Buffer(4);
+    b.writeInt32BE(v);
+    return b;
+  },
+  S7WordLen: snap7.S7WLDWord
+};
+
+/**
+ * REAL
+ * @type {S7ClientDatatype}
+ */
+module.exports.REAL = {
+  bytes: 4,
+  parser: (buffer, offset = 0) => buffer.readFloatBE(offset),
+  formatter: v => {
+    const b = new Buffer(4);
+    b.writeFloatBE(v);
+    return b;
+  },
+  S7WordLen: snap7.S7WLDWord
+};
+
+
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Jan 30 2018 00:00:23 GMT+0100 (CET) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

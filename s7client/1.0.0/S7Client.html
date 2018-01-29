@@ -2,35 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>S7Client - Documentation</title>
+    <title>JSDoc: Class: S7Client</title>
 
-    <script src="scripts/prettify/prettify.js"></script>
-    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
 </head>
+
 <body>
 
-<input type="checkbox" id="nav-trigger" class="nav-trigger" />
-<label for="nav-trigger" class="navicon-button x">
-  <div class="navicon"></div>
-</label>
-
-<label for="nav-trigger" class="overlay"></label>
-
-<nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="S7Client.html">S7Client</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="S7Client.html#autoConnect">autoConnect</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="S7Client.html#connect">connect</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="S7Client.html#disconnect">disconnect</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="S7Client.html#getCpuInfo">getCpuInfo</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="S7Client.html#getPlcDateTime">getPlcDateTime</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="S7Client.html#isConnected">isConnected</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="S7Client.html#readDB">readDB</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="S7Client.html#readVar">readVar</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="S7Client.html#readVars">readVars</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="S7Client.html#writeVar">writeVar</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="S7Client.html#writeVars">writeVars</a></span></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-datatypes.html">datatypes</a></span></li>
-</nav>
-
 <div id="main">
-    
-    <h1 class="page-title">S7Client</h1>
-    
+
+    <h1 class="page-title">Class: S7Client</h1>
 
     
 
@@ -41,9 +28,7 @@
 
 <header>
     
-        <h2>
-        S7Client
-        </h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>S7Client<span class="signature">(options)</span><span class="type-signature"></span></h2>
         
             <div class="class-description"><p>High level API for Siemens S7 PLCs</p></div>
         
@@ -54,13 +39,14 @@
     <div class="container-overview">
     
         
-<div class="section-method">
 
     
     <h2>Constructor</h2>
     
 
+    
     <h4 class="name" id="S7Client"><span class="type-signature"></span>new S7Client<span class="signature">(options)</span><span class="type-signature"></span></h4>
+    
 
     
 
@@ -69,6 +55,405 @@
 <div class="description">
     <p>Construct a new S7Client</p>
 </div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    S7PLC
+                
+                </td>
+            
+
+            <td class="description last"><p>Human readable Name for this PLC</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>host</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    localhost
+                
+                </td>
+            
+
+            <td class="description last"><p>Hostname or IP</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>port</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    102
+                
+                </td>
+            
+
+            <td class="description last"><p>Port</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>rack</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
+
+            <td class="description last"><p>Rack</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>Slot</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    1
+                
+                </td>
+            
+
+            <td class="description last"><p>Slot</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>connectionCheckInterval</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    2000
+                
+                </td>
+            
+
+            <td class="description last"><p>Interval in ms to check if PLC is connected</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>maxRetryDelay</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    6000
+                
+                </td>
+            
+
+            <td class="description last"><p>Max reconnect delay</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>alivePkgCycle</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    45
+                
+                </td>
+            
+
+            <td class="description last"><p>Send a keepAlive package every nth connectionCheck</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -118,431 +503,6 @@
 
 
 
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>Object</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">
-                
-                
-                    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>name</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    S7PLC
-                
-                </td>
-            
-
-            <td class="description last">
-                <p>Human readable Name for this PLC</p>
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>host</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    localhost
-                
-                </td>
-            
-
-            <td class="description last">
-                <p>Hostname or IP</p>
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>port</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>int</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    102
-                
-                </td>
-            
-
-            <td class="description last">
-                <p>Port</p>
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>rack</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>int</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    0
-                
-                </td>
-            
-
-            <td class="description last">
-                <p>Rack</p>
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>Slot</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>int</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    1
-                
-                </td>
-            
-
-            <td class="description last">
-                <p>Slot</p>
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>connectionCheckInterval</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>int</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    2000
-                
-                </td>
-            
-
-            <td class="description last">
-                <p>Interval in ms to check if PLC is connected</p>
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>maxRetryDelay</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>int</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    6000
-                
-                </td>
-            
-
-            <td class="description last">
-                <p>Max reconnect delay</p>
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>alivePkgCycle</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>int</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    45
-                
-                </td>
-            
-
-            <td class="description last">
-                <p>Send a keepAlive package every nth connectionCheck</p>
-                
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-                
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
 <h5>Fires:</h5>
 <ul>
     <li>event:connect - PLC connected</li>
@@ -564,7 +524,9 @@
 
 
 
-</div>
+
+
+
     
     </div>
 
@@ -574,7 +536,9 @@
 
     
 
-     
+    
+
+    
 
     
 
@@ -585,11 +549,176 @@
 
         
             
-<div class="section-method">
 
     
 
+    
+    <h4 class="name" id=".dnsLookup"><span class="type-signature">(private, static) </span>dnsLookup<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line328">line 328</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="_setupAliveCheck"><span class="type-signature">(private) </span>_setupAliveCheck<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line118">line 118</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="autoConnect"><span class="type-signature">(async) </span>autoConnect<span class="signature">()</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
 
     
 
@@ -598,6 +727,14 @@
 <div class="description">
     <p>Establish connection to the plc and keep retrying on error</p>
 </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -655,49 +792,41 @@
 
 
 
-
-
-
-
-
-
-
-
-<div class="section-returns">
 <h5>Returns:</h5>
 
         
+<div class="param-desc">
+    <p>resolves with CpuInfo Object</p>
+</div>
 
-<dl class="param-type">
+
+
+<dl>
     <dt>
-        Type:
+        Type
     </dt>
     <dd>
         
-<span class="param-type"><code>Promise</code></span>
+<span class="param-type">Promise</span>
 
 
     </dd>
 </dl>
 
-
-<div class="param-desc">
-    <p>resolves with CpuInfo Object</p>
-</div>
-
     
-</div>
 
 
 
-</div>
+
+
         
             
-<div class="section-method">
 
     
 
+    
     <h4 class="name" id="connect"><span class="type-signature">(async) </span>connect<span class="signature">()</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
 
     
 
@@ -706,6 +835,14 @@
 <div class="description">
     <p>Establish connection to the plc</p>
 </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -763,49 +900,41 @@
 
 
 
-
-
-
-
-
-
-
-
-<div class="section-returns">
 <h5>Returns:</h5>
 
         
+<div class="param-desc">
+    <p>resolves with CpuInfo Object</p>
+</div>
 
-<dl class="param-type">
+
+
+<dl>
     <dt>
-        Type:
+        Type
     </dt>
     <dd>
         
-<span class="param-type"><code>Promise</code></span>
+<span class="param-type">Promise</span>
 
 
     </dd>
 </dl>
 
-
-<div class="param-desc">
-    <p>resolves with CpuInfo Object</p>
-</div>
-
     
-</div>
 
 
 
-</div>
+
+
         
             
-<div class="section-method">
 
     
 
+    
     <h4 class="name" id="disconnect"><span class="type-signature"></span>disconnect<span class="signature">()</span><span class="type-signature"></span></h4>
+    
 
     
 
@@ -814,6 +943,14 @@
 <div class="description">
     <p>Disconnect from the PLC</p>
 </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -876,19 +1013,14 @@
 
 
 
-
-
-
-
-
-</div>
         
             
-<div class="section-method">
 
     
 
+    
     <h4 class="name" id="getCpuInfo"><span class="type-signature">(async) </span>getCpuInfo<span class="signature">()</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
 
     
 
@@ -897,6 +1029,14 @@
 <div class="description">
     <p>Return getCpuInfo from PLC</p>
 </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -954,45 +1094,37 @@
 
 
 
-
-
-
-
-
-
-
-
-<div class="section-returns">
 <h5>Returns:</h5>
 
         
 
-<dl class="param-type">
+
+<dl>
     <dt>
-        Type:
+        Type
     </dt>
     <dd>
         
-<span class="param-type"><code>Promise</code></span>
+<span class="param-type">Promise</span>
 
 
     </dd>
 </dl>
 
-
     
-</div>
 
 
 
-</div>
+
+
         
             
-<div class="section-method">
 
     
 
+    
     <h4 class="name" id="getPlcDateTime"><span class="type-signature"></span>getPlcDateTime<span class="signature">()</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
 
     
 
@@ -1001,6 +1133,14 @@
 <div class="description">
     <p>Return DateTime from PLC</p>
 </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -1058,45 +1198,37 @@
 
 
 
-
-
-
-
-
-
-
-
-<div class="section-returns">
 <h5>Returns:</h5>
 
         
 
-<dl class="param-type">
+
+<dl>
     <dt>
-        Type:
+        Type
     </dt>
     <dd>
         
-<span class="param-type"><code>Promise</code></span>
+<span class="param-type">Promise</span>
 
 
     </dd>
 </dl>
 
-
     
-</div>
 
 
 
-</div>
+
+
         
             
-<div class="section-method">
 
     
 
+    
     <h4 class="name" id="isConnected"><span class="type-signature"></span>isConnected<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
 
     
 
@@ -1105,6 +1237,14 @@
 <div class="description">
     <p>Return whether the client is connected or not</p>
 </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -1162,45 +1302,37 @@
 
 
 
-
-
-
-
-
-
-
-
-<div class="section-returns">
 <h5>Returns:</h5>
 
         
 
-<dl class="param-type">
+
+<dl>
     <dt>
-        Type:
+        Type
     </dt>
     <dd>
         
-<span class="param-type"><code>boolean</code></span>
+<span class="param-type">boolean</span>
 
 
     </dd>
 </dl>
 
-
     
-</div>
 
 
 
-</div>
+
+
         
             
-<div class="section-method">
 
     
 
+    
     <h4 class="name" id="readDB"><span class="type-signature">(async) </span>readDB<span class="signature">(DBNr, vars)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
 
     
 
@@ -1209,6 +1341,209 @@
 <div class="description">
     <p>Read a DB and parse the result</p>
 </div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>DBNr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The DB Number to read</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>vars</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Array of Var objects</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>start</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Position of the first byte</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>bit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Position of the bit in the byte</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Data type (BYTE, WORD, INT, etc), see <a href="module-datatypes.html"><code>module:datatypes</code></a></p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -1262,77 +1597,66 @@
 
 
 
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <ul>
+<li>Resolves to the vars array with populate <em>value</em> property</li>
+</ul>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="readVar"><span class="type-signature">(async) </span>readVar<span class="signature">()</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Read a single var</p>
+</div>
+
+
+
+
+
+
+
+
+
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>DBNr</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>int</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">
-                <p>The DB Number to read</p>
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>vars</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>array</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">
-                <p>Array of Var objects</p>
-                
-                    
 
 <table class="params">
     <thead>
@@ -1358,13 +1682,13 @@
 
         <tr>
             
-                <td class="name"><code>start</code></td>
+                <td class="name"><code>v.area</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><code>int</code></span>
+<span class="param-type">string</span>
 
 
             
@@ -1382,23 +1706,82 @@
 
             
 
-            <td class="description last">
-                <p>Position of the first byte</p>
-                
-            </td>
+            <td class="description last"><p>Area (pe, db, etc)</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>bit</code></td>
+                <td class="name"><code>v.type</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><code>int</code></span>
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Data type (BYTE, WORD, INT, etc), see <a href="module-datatypes.html"><code>module:datatypes</code></a></p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>v.start</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Position of the first byte</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>v.dbnr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
 
 
             
@@ -1418,23 +1801,20 @@
 
             
 
-            <td class="description last">
-                <p>Position of the bit in the byte</p>
-                
-            </td>
+            <td class="description last"><p>DB Nr if read from area=db</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>type</code></td>
+                <td class="name"><code>v.bit</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
+<span class="param-type">int</span>
 
 
             
@@ -1442,6 +1822,8 @@
 
             
                 <td class="attributes">
+                
+                    &lt;optional><br>
                 
 
                 
@@ -1452,82 +1834,13 @@
 
             
 
-            <td class="description last">
-                <p>Data type (BYTE, WORD, INT, etc), see <a href="module-datatypes.html"><code>module:datatypes</code></a></p>
-                
-            </td>
+            <td class="description last"><p>Position of the bit in the byte</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-                
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="section-returns">
-<h5>Returns:</h5>
-
-        
-
-<dl class="param-type">
-    <dt>
-        Type:
-    </dt>
-    <dd>
-        
-<span class="param-type"><code>Promise</code></span>
-
-
-    </dd>
-</dl>
-
-
-<div class="param-desc">
-    <ul>
-<li>Resolves to the vars array with populate <em>value</em> property</li>
-</ul>
-</div>
-
-    
-</div>
-
-
-
-</div>
-        
-            
-<div class="section-method">
-
-    
-
-    <h4 class="name" id="readVar"><span class="type-signature">(async) </span>readVar<span class="signature">()</span><span class="type-signature"> &rarr; {Promise}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Read a single var</p>
-</div>
 
 
 
@@ -1581,8 +1894,108 @@
 
 
 
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <ul>
+<li>Resolves to the var obj with populate <em>value</em> property</li>
+</ul>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="readVars"><span class="type-signature">(async) </span>readVars<span class="signature">(vars)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Read multiple Vars and parse the result</p>
+</div>
+
+
+
+
+
+
+
+
+
     <h5>Parameters:</h5>
     
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>vars</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Array of Var objects</p>
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -1608,13 +2021,13 @@
 
         <tr>
             
-                <td class="name"><code>v.area</code></td>
+                <td class="name"><code>start</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
+<span class="param-type">int</span>
 
 
             
@@ -1632,91 +2045,20 @@
 
             
 
-            <td class="description last">
-                <p>Area (pe, db, etc)</p>
-                
-            </td>
+            <td class="description last"><p>Position of the first byte</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>v.type</code></td>
+                <td class="name"><code>bit</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">
-                <p>Data type (BYTE, WORD, INT, etc), see <a href="module-datatypes.html"><code>module:datatypes</code></a></p>
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>v.start</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>int</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">
-                <p>Position of the first byte</p>
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>v.dbnr</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
+<span class="param-type">int</span>
 
 
             
@@ -1736,23 +2078,82 @@
 
             
 
-            <td class="description last">
-                <p>DB Nr if read from area=db</p>
-                
-            </td>
+            <td class="description last"><p>Position of the bit in the byte</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>v.bit</code></td>
+                <td class="name"><code>type</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><code>int</code></span>
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Data type (BYTE, WORD, INT, etc), see <a href="module-datatypes.html"><code>module:datatypes</code></a></p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>area</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Area (pe, db, etc)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dbnr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
 
 
             
@@ -1772,9 +2173,13 @@
 
             
 
-            <td class="description last">
-                <p>Position of the bit in the byte</p>
-                
+            <td class="description last"><p>DB Nr if read from area=db</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
             </td>
         </tr>
 
@@ -1782,64 +2187,6 @@
     </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="section-returns">
-<h5>Returns:</h5>
-
-        
-
-<dl class="param-type">
-    <dt>
-        Type:
-    </dt>
-    <dd>
-        
-<span class="param-type"><code>Promise</code></span>
-
-
-    </dd>
-</dl>
-
-
-<div class="param-desc">
-    <ul>
-<li>Resolves to the var obj with populate <em>value</em> property</li>
-</ul>
-</div>
-
-    
-</div>
-
-
-
-</div>
-        
-            
-<div class="section-method">
-
-    
-
-    <h4 class="name" id="readVars"><span class="type-signature">(async) </span>readVars<span class="signature">(vars)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Read multiple Vars and parse the result</p>
-</div>
 
 
 
@@ -1893,51 +2240,66 @@
 
 
 
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <ul>
+<li>Resolves to the vars array with populate <em>value</em> property</li>
+</ul>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="writeVar"><span class="type-signature">(async) </span>writeVar<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;*>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Write a single var</p>
+</div>
+
+
+
+
+
+
+
+
+
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>vars</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>array</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">
-                <p>Array of Var objects</p>
-                
-                    
 
 <table class="params">
     <thead>
@@ -1963,13 +2325,13 @@
 
         <tr>
             
-                <td class="name"><code>start</code></td>
+                <td class="name"><code>v.area</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><code>int</code></span>
+<span class="param-type">string</span>
 
 
             
@@ -1987,23 +2349,82 @@
 
             
 
-            <td class="description last">
-                <p>Position of the first byte</p>
-                
-            </td>
+            <td class="description last"><p>Area (pe, db, etc)</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>bit</code></td>
+                <td class="name"><code>v.type</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><code>int</code></span>
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Data type (BYTE, WORD, INT, etc), see <a href="module-datatypes.html"><code>module:datatypes</code></a></p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>v.start</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Position of the first byte</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>v.dbnr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
 
 
             
@@ -2023,91 +2444,20 @@
 
             
 
-            <td class="description last">
-                <p>Position of the bit in the byte</p>
-                
-            </td>
+            <td class="description last"><p>DB Nr if read from area=db</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>type</code></td>
+                <td class="name"><code>v.bit</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">
-                <p>Data type (BYTE, WORD, INT, etc), see <a href="module-datatypes.html"><code>module:datatypes</code></a></p>
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>area</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">
-                <p>Area (pe, db, etc)</p>
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>dbnr</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
+<span class="param-type">int</span>
 
 
             
@@ -2127,82 +2477,39 @@
 
             
 
-            <td class="description last">
-                <p>DB Nr if read from area=db</p>
-                
-            </td>
+            <td class="description last"><p>Position of the bit in the byte</p></td>
         </tr>
 
     
-    </tbody>
-</table>
 
-                
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="section-returns">
-<h5>Returns:</h5>
-
-        
-
-<dl class="param-type">
-    <dt>
-        Type:
-    </dt>
-    <dd>
-        
-<span class="param-type"><code>Promise</code></span>
-
-
-    </dd>
-</dl>
-
-
-<div class="param-desc">
-    <ul>
-<li>Resolves to the vars array with populate <em>value</em> property</li>
-</ul>
-</div>
-
-    
-</div>
-
-
-
-</div>
-        
+        <tr>
             
-<div class="section-method">
+                <td class="name"><code>v.value</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Value to write</p></td>
+        </tr>
 
     
+    </tbody>
+</table>
 
-    <h4 class="name" id="writeVar"><span class="type-signature">(async) </span>writeVar<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;*>}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Write a single var</p>
-</div>
 
 
 
@@ -2256,8 +2563,102 @@
 
 
 
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;*></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="writeVars"><span class="type-signature">(async) </span>writeVars<span class="signature">(vars)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Write multiple Vars</p>
+</div>
+
+
+
+
+
+
+
+
+
     <h5>Parameters:</h5>
     
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>vars</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Array of Var objects</p>
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -2283,13 +2684,13 @@
 
         <tr>
             
-                <td class="name"><code>v.area</code></td>
+                <td class="name"><code>start</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
+<span class="param-type">int</span>
 
 
             
@@ -2307,91 +2708,20 @@
 
             
 
-            <td class="description last">
-                <p>Area (pe, db, etc)</p>
-                
-            </td>
+            <td class="description last"><p>Position of the first byte</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>v.type</code></td>
+                <td class="name"><code>bit</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">
-                <p>Data type (BYTE, WORD, INT, etc), see <a href="module-datatypes.html"><code>module:datatypes</code></a></p>
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>v.start</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>int</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">
-                <p>Position of the first byte</p>
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>v.dbnr</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
+<span class="param-type">int</span>
 
 
             
@@ -2411,23 +2741,82 @@
 
             
 
-            <td class="description last">
-                <p>DB Nr if read from area=db</p>
-                
-            </td>
+            <td class="description last"><p>Position of the bit in the byte</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>v.bit</code></td>
+                <td class="name"><code>type</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><code>int</code></span>
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Data type (BYTE, WORD, INT, etc), see <a href="module-datatypes.html"><code>module:datatypes</code></a></p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>area</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Area (pe, db, etc)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dbnr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
 
 
             
@@ -2447,17 +2836,14 @@
 
             
 
-            <td class="description last">
-                <p>Position of the bit in the byte</p>
-                
-            </td>
+            <td class="description last"><p>DB Nr if read from area=db</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>v.value</code></td>
+                <td class="name"><code>value</code></td>
             
 
             <td class="type">
@@ -2476,9 +2862,13 @@
 
             
 
-            <td class="description last">
-                <p>Value to write</p>
-                
+            <td class="description last"><p>Value</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
             </td>
         </tr>
 
@@ -2486,58 +2876,6 @@
     </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="section-returns">
-<h5>Returns:</h5>
-
-        
-
-<dl class="param-type">
-    <dt>
-        Type:
-    </dt>
-    <dd>
-        
-<span class="param-type"><code>Promise.&lt;*></code></span>
-
-
-    </dd>
-</dl>
-
-
-    
-</div>
-
-
-
-</div>
-        
-            
-<div class="section-method">
-
-    
-
-    <h4 class="name" id="writeVars"><span class="type-signature">(async) </span>writeVars<span class="signature">(vars)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Write multiple Vars</p>
-</div>
 
 
 
@@ -2591,330 +2929,39 @@
 
 
 
-    <h5>Parameters:</h5>
-    
 
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
 
-        <th>Type</th>
 
-        
 
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>vars</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>array</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">
-                <p>Array of Var objects</p>
-                
-                    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>start</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>int</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">
-                <p>Position of the first byte</p>
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>bit</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>int</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">
-                <p>Position of the bit in the byte</p>
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>type</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">
-                <p>Data type (BYTE, WORD, INT, etc), see <a href="module-datatypes.html"><code>module:datatypes</code></a></p>
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>area</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">
-                <p>Area (pe, db, etc)</p>
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>dbnr</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">
-                <p>DB Nr if read from area=db</p>
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>value</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">
-                <p>Value</p>
-                
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-                
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="section-returns">
 <h5>Returns:</h5>
 
         
-
-<dl class="param-type">
-    <dt>
-        Type:
-    </dt>
-    <dd>
-        
-<span class="param-type"><code>Promise</code></span>
-
-
-    </dd>
-</dl>
-
-
 <div class="param-desc">
     <ul>
 <li>Resolves to the vars array with populate <em>value</em> property</li>
 </ul>
 </div>
 
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
     
-</div>
 
 
 
-</div>
+
+
         
     
 
@@ -2930,13 +2977,17 @@
 
 </div>
 
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-datatypes.html">datatypes</a></li></ul><h3>Classes</h3><ul><li><a href="S7Client.html">S7Client</a></li></ul>
+</nav>
+
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Jan 30 2018 00:00:23 GMT+0100 (CET) using the Minami theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Jan 30 2018 00:18:06 GMT+0100 (CET)
 </footer>
 
-<script>prettyPrint();</script>
-<script src="scripts/linenumber.js"></script>
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
 </body>
 </html>

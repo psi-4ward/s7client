@@ -10,7 +10,7 @@
   "scripts": {
     "docs": "docma -c docma.config.json",
     "deploy:docs": "npm run docs && git-directory-deploy --directory docs --branch gh-pages",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test nyc mocha"
   },
   "repository": {
     "type": "git",
@@ -42,7 +42,10 @@
     "node-snap7": "^1.0.0"
   },
   "devDependencies": {
+    "chai": "^4.1.2",
     "docma": "^1.5.3",
-    "git-directory-deploy": "^1.5.1"
+    "git-directory-deploy": "^1.5.1",
+    "mocha": "^5.0.0",
+    "nyc": "^11.4.1"
   }
 }

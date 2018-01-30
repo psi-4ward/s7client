@@ -114,6 +114,15 @@ describe('S7Client tests', function() {
     });
   });
 
-  
+  describe('autoconnect', async () => {
+    it('should return with CPUInfo object', async () => expect(await client.autoConnect()).to.be.an('object'));
+  });
+
+  describe('_setupAliveCheck', async () => {
+    it('should be called and setup _aliveCheckInterval', () => {
+      expect(client._aliveCheckInterval).to.be.not.an('undefined');
+    });
+  });
+
 
 });

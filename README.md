@@ -5,6 +5,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/psi-4ward/s7client/badge.svg)](https://snyk.io/test/github/psi-4ward/s7client)
 [![Greenkeeper badge](https://badges.greenkeeper.io/psi-4ward/s7client.svg)](https://greenkeeper.io/)
 [![Maintainability](https://api.codeclimate.com/v1/badges/74afb63a0af08f701de3/maintainability)](https://codeclimate.com/github/psi-4ward/s7client/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/74afb63a0af08f701de3/test_coverage)](https://codeclimate.com/github/psi-4ward/s7client/test_coverage)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RTWDCH74TJN54&item_name=s7client)
 
 

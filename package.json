@@ -10,7 +10,7 @@
   "scripts": {
     "docs": "docma -c docma.config.json",
     "deploy:docs": "npm run docs && git-directory-deploy --directory docs --branch gh-pages",
-    "test": "NODE_ENV=test nyc mocha"
+    "test": "NODE_ENV=test nyc --reporter=lcov --reporter=text --report-dir .nyc_output mocha"
   },
   "repository": {
     "type": "git",

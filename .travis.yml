@@ -1,3 +1,7 @@
 language: node_js
 node_js:
  - "node"
+
+after_script:
+  - npm i codeclimate-test-reporter
+  - node_modules/.bin/codeclimate-test-reporter < .nyc_output/lcov.info

@@ -82,7 +82,7 @@ const Datatypes = {
    * REAL
    * @type {S7ClientDatatype}
    */
-  REAL: _gen(4, 'FloatBE', snap7.S7WLDWord),
+  REAL: _gen(4, 'FloatBE', snap7.S7WLReal),
 };
 
 module.exports = Datatypes;

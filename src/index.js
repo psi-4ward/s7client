@@ -198,7 +198,7 @@ class S7Client extends EventEmitter {
       });
       debug(`${this.opts.name}: ReadDB DB=${DBNr}, Offset=${offset}, Length=${end - offset}`);
       this.client.DBRead(DBNr, offset, end - offset, (err, res) => {
-        if(err) return reject(new Error(`${this.opts.name}: ` + this.client.ErrorText(err)));
+        if(err) return this._getErr(err);
         resolve(vars.map(v => {
           v.value = datatypes[v.type].parser(res, v.start - offset, v.bit);
           this.emit('value', v);
@@ -232,7 +232,7 @@ class S7Client extends EventEmitter {
       });
 
       this.client.ReadMultiVars(toRead, (err, res) => {
-        if(err) return reject(new Error(`${this.opts.name}: ` + this.client.ErrorText(err)));
+        if(err) return this._getErr(err);
         let errs = [];
         res = vars.map((v, i) => {
           if(res[i].Result !== 0) return errs.push(this.client.ErrorText(res[i].Result));
@@ -270,7 +270,7 @@ class S7Client extends EventEmitter {
 
     return new Promise((resolve, reject) => {
       this.client.WriteMultiVars(toWrite, (err, res) => {
-        if(err) return reject(new Error(`${this.opts.name}: ` + this.client.ErrorText(err)));
+        if(err) return this._getErr(err);
         let errs = [];
 
         res = vars.map((v, i) => {
@@ -314,13 +314,21 @@ class S7Client extends EventEmitter {
     return this.writeVars([v]).then(erg => erg[0]);
   }
 
+
+  /**
+   * @private
+   */
+  _getErr(s7err) {
+    return reject(new Error(`${this.opts.name}: ` + this.client.ErrorText(s7err)));
+  }
+
   /**
    * @private
    */
   async _cbToPromise(fn) {
     return new Promise((resolve, reject) => {
       fn((err, data) => {
-        if(err) return reject(new Error(`${this.opts.name}: ` + this.client.ErrorText(err)));
+        if(err) return this._getErr(err);
         resolve(data);
       });
     });

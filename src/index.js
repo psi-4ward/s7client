@@ -240,7 +240,7 @@ class S7Client extends EventEmitter {
           this.emit('value', v);
           return v;
         });
-        if(errs.length) return reject(new Error(`${this.opts.name}: readVars Errors: ` + errs.join('; ')));
+        if(errs.length) return reject(this._getErr(errs));
         resolve(res);
       });
     });
@@ -277,7 +277,7 @@ class S7Client extends EventEmitter {
           if(res[i].Result !== 0) return errs.push(this.client.ErrorText(res[i].Result));
           return v;
         });
-        if(errs.length) return reject(new Error(`${this.opts.name}: writeVars Errors: ` + errs.join('; ')));
+        if(errs.length) return reject(this._getErr(errs));
         resolve(res);
       });
     });
@@ -316,25 +316,32 @@ class S7Client extends EventEmitter {
 
 
   /**
+   * Construct Error object
+   *
    * @private
    */
   _getErr(s7err) {
-    return reject(new Error(`${this.opts.name}: ` + this.client.ErrorText(s7err)));
+    if(Array.isArray(s7err)) return new Error(`${this.opts.name} Errors: ` + s7err.join('; '));
+    return new Error(`${this.opts.name}: ` + this.client.ErrorText(s7err));
   }
 
   /**
+   * Callback to promise
+   *
    * @private
    */
   async _cbToPromise(fn) {
     return new Promise((resolve, reject) => {
       fn((err, data) => {
-        if(err) return this._getErr(err);
+        if(err) return reject(this._getErr(err));
         resolve(data);
       });
     });
   }
 
   /**
+   * Get IP address from hostname
+   *
    * @private
    */
   static dnsLookup(host) {

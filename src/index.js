@@ -163,12 +163,7 @@ class S7Client extends EventEmitter {
    * @returns {Promise}
    */
   getPlcDateTime() {
-    return new Promise((resolve, reject) => {
-      this.client.GetPlcDateTime((err, data) => {
-        if(err) return reject(new Error(`${this.opts.name}: ` + this.client.ErrorText(err)));
-        resolve(data);
-      });
-    });
+    return this._cbToPromise(this.client.GetPlcDateTime.bind(this.client));
   }
 
 
@@ -177,12 +172,7 @@ class S7Client extends EventEmitter {
    * @returns {Promise}
    */
   async getCpuInfo() {
-    return new Promise((resolve, reject) => {
-      this.client.GetCpuInfo((err, data) => {
-        if(err) return reject(new Error(`${this.opts.name}: ` + this.client.ErrorText(err)));
-        resolve(data);
-      });
-    });
+    return this._cbToPromise(this.client.GetCpuInfo.bind(this.client));
   }
 
   /**
@@ -322,6 +312,18 @@ class S7Client extends EventEmitter {
    */
   async writeVar(v) {
     return this.writeVars([v]).then(erg => erg[0]);
+  }
+
+  /**
+   * @private
+   */
+  async _cbToPromise(fn) {
+    return new Promise((resolve, reject) => {
+      fn((err, data) => {
+        if(err) return reject(new Error(`${this.opts.name}: ` + this.client.ErrorText(err)));
+        resolve(data);
+      });
+    });
   }
 
   /**

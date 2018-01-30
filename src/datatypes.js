@@ -9,6 +9,19 @@ const snap7 = require('node-snap7').S7Client();
  * @property {number} S7WordLen - S7WL type
  */
 
+function _gen(bytes, bFn, S7WordLen) {
+  return {
+    bytes,
+    parser: (buffer, offset = 0) => buffer['read'+bFn](offset),
+    formatter: v => {
+      const b = new Buffer(bytes);
+      b['write'+bFn](v);
+      return b;
+    },
+    S7WordLen
+  }
+}
+
 /**
  * @enum
  */
@@ -28,50 +41,19 @@ const Datatypes = {
    * BYTE
    * @type {S7ClientDatatype}
    */
-  BYTE: {
-    bytes: 1,
-    parser: (buffer, offset = 0) => buffer.readUInt8(offset),
-    formatter: v => {
-      const b = new Buffer(1);
-      b.writeUInt8(v);
-      return b;
-    },
-    S7WordLen: snap7.S7WLByte
-  },
+  BYTE: _gen(1, 'UInt8', snap7.S7WLByte),
 
   /**
    * WORD
    * @type {S7ClientDatatype}
    */
-  WORD: {
-    bytes: 2,
-    parser: (buffer, offset = 0) => buffer.readUInt16BE(offset),
-    formatter:
-      v => {
-        const b = new Buffer(2);
-        b.writeUInt16BE(v);
-        return b;
-      },
-    S7WordLen:
-    snap7.S7WLWord
-  },
+  WORD: _gen(2, 'UInt16BE', snap7.S7WLWord),
 
   /**
    * DWORD
    * @type {S7ClientDatatype}
    */
-  DWORD: {
-    bytes: 4,
-    parser: (buffer, offset = 0) => buffer.readUInt32BE(offset),
-    formatter:
-      v => {
-        const b = new Buffer(4);
-        b.writeUInt32BE(v);
-        return b;
-      },
-    S7WordLen:
-    snap7.S7WLWord
-  },
+  DWORD: _gen(4, 'UInt32BE', snap7.S7WLDWord),
 
   /**
    * CHAR
@@ -81,60 +63,26 @@ const Datatypes = {
     bytes: 1,
     parser: (buffer, offset = 0) => buffer.toString('ascii', offset, offset + 1),
     formatter: v => new Buffer(v, 'ascii'),
-    S7WordLen:
-    snap7.S7WLDWord
+    S7WordLen: snap7.S7WLDWord
   },
 
   /**
    * INT
    * @type {S7ClientDatatype}
    */
-  INT: {
-    bytes: 2,
-    parser: (buffer, offset = 0) => buffer.readInt16BE(offset),
-    formatter:
-      v => {
-        const b = new Buffer(2);
-        b.writeInt16BE(v);
-        return b;
-      },
-    S7WordLen:
-    snap7.S7WLWord
-  },
+  INT: _gen(2, 'UInt16BE', snap7.S7WLWord),
 
   /**
    * DINT
    * @type {S7ClientDatatype}
    */
-  DINT: {
-    bytes: 4,
-    parser: (buffer, offset = 0) => buffer.readInt32BE(offset),
-    formatter:
-      v => {
-        const b = new Buffer(4);
-        b.writeInt32BE(v);
-        return b;
-      },
-    S7WordLen:
-    snap7.S7WLDWord
-  },
+  DINT: _gen(4, 'UInt32BE', snap7.S7WLDWord),
 
   /**
    * REAL
    * @type {S7ClientDatatype}
    */
-  REAL: {
-    bytes: 4,
-    parser: (buffer, offset = 0) => buffer.readFloatBE(offset),
-    formatter:
-      v => {
-        const b = new Buffer(4);
-        b.writeFloatBE(v);
-        return b;
-      },
-    S7WordLen:
-    snap7.S7WLDWord
-  }
+  REAL: _gen(4, 'FloatBE', snap7.S7WLDWord),
 };
 
 module.exports = Datatypes;

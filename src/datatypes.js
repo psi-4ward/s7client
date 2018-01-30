@@ -45,8 +45,7 @@ const Datatypes = {
    */
   WORD: {
     bytes: 2,
-    parser:
-      (buffer, offset = 0) => buffer.readUInt16BE(offset),
+    parser: (buffer, offset = 0) => buffer.readUInt16BE(offset),
     formatter:
       v => {
         const b = new Buffer(2);
@@ -63,8 +62,7 @@ const Datatypes = {
    */
   DWORD: {
     bytes: 4,
-    parser:
-      (buffer, offset = 0) => buffer.readUInt32BE(offset),
+    parser: (buffer, offset = 0) => buffer.readUInt32BE(offset),
     formatter:
       v => {
         const b = new Buffer(4);
@@ -81,14 +79,8 @@ const Datatypes = {
    */
   CHAR: {
     bytes: 1,
-    parser:
-      (buffer, offset = 0) => buffer.toString('ascii', offset, offset + 1),
-    formatter:
-      v => {
-        const b = new Buffer(4);
-        b.write(v, 0, 'ascii');
-        return b;
-      },
+    parser: (buffer, offset = 0) => buffer.toString('ascii', offset, offset + 1),
+    formatter: v => new Buffer(v, 'ascii'),
     S7WordLen:
     snap7.S7WLDWord
   },
@@ -99,8 +91,7 @@ const Datatypes = {
    */
   INT: {
     bytes: 2,
-    parser:
-      (buffer, offset = 0) => buffer.readInt16BE(offset),
+    parser: (buffer, offset = 0) => buffer.readInt16BE(offset),
     formatter:
       v => {
         const b = new Buffer(2);
@@ -117,8 +108,7 @@ const Datatypes = {
    */
   DINT: {
     bytes: 4,
-    parser:
-      (buffer, offset = 0) => buffer.readInt32BE(offset),
+    parser: (buffer, offset = 0) => buffer.readInt32BE(offset),
     formatter:
       v => {
         const b = new Buffer(4);
@@ -135,8 +125,7 @@ const Datatypes = {
    */
   REAL: {
     bytes: 4,
-    parser:
-      (buffer, offset = 0) => buffer.readFloatBE(offset),
+    parser: (buffer, offset = 0) => buffer.readFloatBE(offset),
     formatter:
       v => {
         const b = new Buffer(4);

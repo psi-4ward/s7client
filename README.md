@@ -1,5 +1,7 @@
 # S7Client
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/psi-4ward/s7client.svg)](https://greenkeeper.io/)
+
 [![npm](https://img.shields.io/npm/v/s7client.svg)](https://www.npmjs.com/package/s7client)
 [![Dependencies](https://david-dm.org/psi-4ward/s7client.svg)](https://david-dm.org/psi-4ward/s7client)
 [![Known Vulnerabilities](https://snyk.io/test/github/psi-4ward/s7client/badge.svg)](https://snyk.io/test/github/psi-4ward/s7client)

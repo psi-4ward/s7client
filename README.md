@@ -3,6 +3,7 @@
 [![npm](https://img.shields.io/npm/v/s7client.svg)](https://www.npmjs.com/package/s7client)
 [![Dependencies](https://david-dm.org/psi-4ward/s7client.svg)](https://david-dm.org/psi-4ward/s7client)
 [![Known Vulnerabilities](https://snyk.io/test/github/psi-4ward/s7client/badge.svg)](https://snyk.io/test/github/psi-4ward/s7client)
+[![Greenkeeper badge](https://badges.greenkeeper.io/psi-4ward/s7client.svg)](https://greenkeeper.io/)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RTWDCH74TJN54&item_name=s7client)
 
 

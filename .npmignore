@@ -1,0 +1,7 @@
+/.idea
+/node_modules
+/tmp
+/docs
+/.nyc_output
+/tests
+/examples

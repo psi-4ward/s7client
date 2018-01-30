@@ -321,7 +321,7 @@ class S7Client extends EventEmitter {
    * @return {Promise<*>}
    */
   async writeVar(v) {
-    return this.writeVars([v]);
+    return this.writeVars([v]).then(erg => erg[0]);
   }
 
   /**

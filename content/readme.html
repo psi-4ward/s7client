@@ -1,0 +1,63 @@
+
+<html><head></head><body><h1 id="s7client">S7Client</h1>
+<hr />
+<p>Hi-Level API for <a href="https://github.com/mathiask88/node-snap7">node-snap7</a> to communicate with Siemens S7 PCLs (See <a href="http://snap7.sourceforge.net/snap7_client.html#target_compatibility">compatibility</a>).</p>
+<ul>
+<li>Promise based, <code>async/await</code> support</li>
+<li>Returns javascript objects with parsed var objects</li>
+<li>EventEmitter: (<code>connect</code>, <code>disconnect</code>, <code>connect_error</code>, <code>value</code>)</li>
+<li>Optional auto reconnect</li>
+</ul>
+<p><strong> <a href="https://psi-4ward.github.io/s7client">API Documentation</a> </strong></p>
+<h2 id="usage">Usage</h2>
+<pre><code class="lang-sh">npm install s7client
+</code></pre>
+<pre><code class="lang-js">// PLC Connection Settings
+const plcSettings = {
+  name: "LocalPLC",
+  host: 'localhost',
+  port: 9102,
+  rack: 0,
+  slot: 2
+};
+
+// DBA to read
+let dbNr = 1;
+let dbVars = [
+  { type: "CHAR", start: 0 },
+  { type: "BOOL", start: 2, bit: 0 },
+  { type: 'INT', start: 3 }
+];
+
+let client = new S7Client(plcSettings);
+client.on('error', console.error);
+
+(async function() {
+  await client.connect();
+
+  // Read DB
+  const res = await client.readDB(dbNr, dbVars);
+  console.log(res);
+
+  // Write multiple Vars
+  await client.writeVars([{
+    area: 'db', dbnr: 1, type: 'BOOL',
+    start: 5, bit: 2,
+    value: true
+  }]);
+
+  client.disconnect();
+})();
+</code></pre>
+<h2 id="special-thanks-to">Special thanks to</h2>
+<ul>
+<li>Davide Nardella for creating <a href="http://snap7.sourceforge.net">snap7</a></li>
+<li>Mathias Küsel for creating <a href="https://github.com/mathiask88/node-snap7">node-snap7</a></li>
+</ul>
+<h2 id="license-copyright">License &amp; copyright</h2>
+<ul>
+<li><a href="https://github.com/psi-4ward/s7client/blob/master/LICENSE">S7Client</a>: MIT</li>
+<li><a href="https://github.com/mathiask88/node-snap7/blob/master/LICENSE">node-snap7</a>: MIT</li>
+<li><a href="http://snap7.sourceforge.net/licensing.html">snap7</a>: LGPLv3</li>
+</ul>
+</body></html>

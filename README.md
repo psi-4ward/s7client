@@ -1,5 +1,11 @@
 # S7Client
 
+[![npm](https://img.shields.io/npm/v/s7client.svg)](https://www.npmjs.com/package/s7client)
+[![Dependencies](https://david-dm.org/psi-4ward/s7client.svg)](https://david-dm.org/psi-4ward/s7client)
+[![Known Vulnerabilities](https://snyk.io/test/github/psi-4ward/s7client/badge.svg)](https://snyk.io/test/github/psi-4ward/s7client)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RTWDCH74TJN54&item_name=s7client)
+
+
 Hi-Level API for [node-snap7](https://github.com/mathiask88/node-snap7) to communicate with Siemens S7 PCLs (See [compatibility](http://snap7.sourceforge.net/snap7_client.html#target_compatibility)).
 
 * Promise based, `async/await` support

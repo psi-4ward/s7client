@@ -1,0 +1,48 @@
+{
+  "name": "s7client",
+  "version": "1.0.0",
+  "description": "Hi level API for node-snap7 to communication with Siemens S7 PLCs",
+  "homepage": "https://psi-4ward.github.io/s7client",
+  "main": "src/index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "docs": "docma -c docma.config.json",
+    "deploy:docs": "npm run docs && git-directory-deploy --directory docs --branch gh-pages",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psi-4ward/s7client.git"
+  },
+  "keywords": [
+    "snap7",
+    "node-snap7",
+    "siemens",
+    "sps",
+    "S7",
+    "plc",
+    "logo"
+  ],
+  "author": {
+    "name": "Christoph Wiechert",
+    "url": "https://psi.cx"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/psi-4ward/s7client/issues"
+  },
+  "engines": {
+    "node": ">=7.6"
+  },
+  "dependencies": {
+    "debug": "^3.1.0",
+    "lodash.random": "^3.2.0",
+    "node-snap7": "^1.0.0"
+  },
+  "devDependencies": {
+    "docma": "^1.5.3",
+    "git-directory-deploy": "^1.5.1"
+  }
+}

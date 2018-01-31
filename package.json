@@ -1,6 +1,6 @@
 {
   "name": "s7client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hi level API for node-snap7 to communication with Siemens S7 PLCs",
   "homepage": "https://psi-4ward.github.io/s7client",
   "main": "src/index.js",

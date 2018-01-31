@@ -70,13 +70,13 @@ const Datatypes = {
    * INT
    * @type {S7ClientDatatype}
    */
-  INT: _gen(2, 'UInt16BE', snap7.S7WLWord),
+  INT: _gen(2, 'Int16BE', snap7.S7WLWord),
 
   /**
    * DINT
    * @type {S7ClientDatatype}
    */
-  DINT: _gen(4, 'UInt32BE', snap7.S7WLDWord),
+  DINT: _gen(4, 'Int32BE', snap7.S7WLDWord),
 
   /**
    * REAL

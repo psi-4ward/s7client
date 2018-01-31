@@ -63,7 +63,7 @@ const Datatypes = {
     bytes: 1,
     parser: (buffer, offset = 0) => buffer.toString('ascii', offset, offset + 1),
     formatter: v => new Buffer(v, 'ascii'),
-    S7WordLen: snap7.S7WLDWord
+    S7WordLen: snap7.S7WLByte
   },
 
   /**

@@ -18,7 +18,7 @@ Hi-Level API for [node-snap7](https://github.com/mathiask88/node-snap7) to commu
 
 **[API Documentation](https://psi-4ward.github.io/s7client)**
 
-[Blog post using this lib](https://psi.cx/2018/siemens-s7-web-hmi/)
+[Blog post](https://psi.cx/2018/siemens-s7-web-hmi/) about my SIMATIC S7 Web HMI project.
 
 ## Usage
 

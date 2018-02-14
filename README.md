@@ -16,7 +16,9 @@ Hi-Level API for [node-snap7](https://github.com/mathiask88/node-snap7) to commu
 * EventEmitter: (`connect`, `disconnect`, `connect_error`, `value`)
 * Optional auto reconnect
 
-** [API Documentation](https://psi-4ward.github.io/s7client) **
+**[API Documentation](https://psi-4ward.github.io/s7client)**
+
+[Blog post using this lib](https://psi.cx/2018/siemens-s7-web-hmi/)
 
 ## Usage
 

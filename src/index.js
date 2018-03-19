@@ -181,7 +181,7 @@ class S7Client extends EventEmitter {
    * @param {array} vars - Array of Var objects
    * @param {int} vars[].start - Position of the first byte
    * @param {int} [vars[].bit] - Position of the bit in the byte
-   * @param {Datatype} vars[].type - Data type (BYTE, WORD, INT, etc), see {@link /?api=Datatypes|Datatypes}
+   * @param {Datatype} vars[].type - Data type (BYTE, WORD, INT, etc), see {@link /s7client/?api=Datatypes|Datatypes}
    * @returns {Promise} - Resolves to the vars array with populate *value* property
    */
   async readDB(DBNr, vars) {
@@ -213,7 +213,7 @@ class S7Client extends EventEmitter {
    * @param {array} vars - Array of Var objects
    * @param {int} vars[].start - Position of the first byte
    * @param {int} [vars[].bit] - Position of the bit in the byte
-   * @param {Datatype} vars[].type - Data type (BYTE, WORD, INT, etc), see {@link /?api=Datatypes|Datatypes}
+   * @param {Datatype} vars[].type - Data type (BYTE, WORD, INT, etc), see {@link /s7client/?api=Datatypes|Datatypes}
    * @param {string} vars[].area - Area (pe, pa, mk, db, ct, tm)
    * @param {int} [vars[].dbnr] - DB Nr if read from area=db
    * @returns {Promise} - Resolves to the vars array with populate *value* property
@@ -251,7 +251,7 @@ class S7Client extends EventEmitter {
    * @param {array} vars - Array of Var objects
    * @param {int} vars[].start - Position of the first byte
    * @param {int} [vars[].bit] - Position of the bit in the byte
-   * @param {Datatype} vars[].type - Data type (BYTE, WORD, INT, etc), see {@link /?api=Datatypes|Datatypes}
+   * @param {Datatype} vars[].type - Data type (BYTE, WORD, INT, etc), see {@link /s7client/?api=Datatypes|Datatypes}
    * @param {string} vars[].area - Area (pe, pa, mk, db, ct, tm)
    * @param {string} [vars[].dbnr] - DB Nr if read from area=db
    * @param vars[].value - Value
@@ -287,7 +287,7 @@ class S7Client extends EventEmitter {
   /**
    * Read a single var
    * @param {string} v.area - Area (pe, pa, mk, db, ct, tm)
-   * @param {Datatype} v.type - Data type (BYTE, WORD, INT, etc), see {@link /?api=Datatypes|Datatypes}
+   * @param {Datatype} v.type - Data type (BYTE, WORD, INT, etc), see {@link /s7client/?api=Datatypes|Datatypes}
    * @param {int} v.start - Position of the first byte
    * @param {string} [v.dbnr] - DB Nr if read from area=db
    * @param {int} [v.bit] - Position of the bit in the byte
@@ -303,7 +303,7 @@ class S7Client extends EventEmitter {
   /**
    * Write a single var
    * @param {string} v.area - Area (pe, pa, mk, db, ct, tm)
-   * @param {Datatype} v.type - Data type (BYTE, WORD, INT, etc), see {@link /?api=Datatypes|Datatypes}
+   * @param {Datatype} v.type - Data type (BYTE, WORD, INT, etc), see {@link /s7client/?api=Datatypes|Datatypes}
    * @param {int} v.start - Position of the first byte
    * @param {string} [v.dbnr] - DB Nr if read from area=db
    * @param {int} [v.bit] - Position of the bit in the byte

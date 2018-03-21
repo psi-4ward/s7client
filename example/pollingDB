@@ -1,0 +1,35 @@
+const { S7Client } = require("s7client");
+
+// PLC Connection Settings
+const plcSettings = {
+  name: "LocalPLC",
+  host: 'localhost',
+  port: 102,
+  rack: 0,
+  slot: 2
+};
+
+// DBA to read
+let dbNr = 1;
+let dbVars = [
+  { ident: 'BOOL Bit 0', type: 'BOOL', start: 1, bit: 0 }
+];
+
+// plc connect
+let client = new S7Client(plcSettings);
+const plc = client.connect();
+client.on('error', console.error);
+client.on('connect', () => {
+  console.log('connected');
+})
+
+// poll the PLC with dbNr and dbVars
+const plcInterval = setInterval(async function () {
+  if (client.isConnected()) {
+    const plcResult = await client.readDB(dbNr, dbVars);
+    console.log(plcResult);
+    console.log("\n");
+  } else {
+    console.error('Read Error')
+  }
+}, 60000); // 1 min...

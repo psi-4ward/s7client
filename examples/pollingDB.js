@@ -19,7 +19,6 @@ let dbVars = [
 let pollTimeout;
 async function pollDB() {
   try {
-    const alive = await client.getCpuInfo();
     const plcResult = await client.readDB(dbNr, dbVars);
     console.log(plcResult, "\n");
   } catch (err) {

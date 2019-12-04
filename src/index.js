@@ -28,7 +28,7 @@ class S7Client extends EventEmitter {
    * @param {int} [options.rack=0] - Rack
    * @param {int} [options.Slot=1] - Slot
    * @param {int} [options.connectionCheckInterval=2000] - Interval in ms to check if PLC is connected
-   * @param {int} [options.maxRetryDelay=6000] - Max reconnect delay
+   * @param {int} [options.maxRetryDelay=60000] - Max reconnect delay
    * @param {int} [options.alivePkgCycle=45] - Send a keepAlive package every nth connectionCheck
    */
   constructor(options) {

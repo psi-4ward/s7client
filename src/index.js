@@ -226,7 +226,7 @@ class S7Client extends EventEmitter {
           Area: this.client['S7Area' + v.area.toUpperCase()],
           WordLen: datatypes[v.type].S7WordLen,
           DBNumber: v.dbnr,
-          Start: v.start,
+          Start: v.type === 'BOOL' ? v.start * 8 + v.bit : v.start,
           Amount: 1
         }
       });

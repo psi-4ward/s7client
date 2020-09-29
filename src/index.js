@@ -198,7 +198,7 @@ class S7Client extends EventEmitter {
       });
       debug(`${this.opts.name}: ReadDB DB=${DBNr}, Offset=${offset}, Length=${end - offset}`);
       this.client.DBRead(DBNr, offset, end - offset, (err, res) => {
-        if(err) return this._getErr(err);
+        if(err) reject(this._getErr(err));
         resolve(vars.map(v => {
           v.value = datatypes[v.type].parser(res, v.start - offset, v.bit);
           this.emit('value', v);

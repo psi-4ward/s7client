@@ -14,7 +14,7 @@ function _gen(bytes, bFn, S7WordLen) {
     bytes,
     parser: (buffer, offset = 0) => buffer['read'+bFn](offset),
     formatter: v => {
-      const b = new Buffer(bytes);
+      const b = Buffer.alloc(bytes);
       b['write'+bFn](v);
       return b;
     },
@@ -33,7 +33,7 @@ const Datatypes = {
   BOOL: {
     bytes: 1,
     parser: (buffer, offset = 0, bit = 0) => +buffer.readUInt8(offset) >> bit & 1 === 1,
-    formatter: v => new Buffer([v ? 0x01 : 0x00]),
+    formatter: v => Buffer.from([v ? 0x01 : 0x00]),
     S7WordLen: snap7.S7WLBit
   },
 
@@ -62,7 +62,7 @@ const Datatypes = {
   CHAR: {
     bytes: 1,
     parser: (buffer, offset = 0) => buffer.toString('ascii', offset, offset + 1),
-    formatter: v => new Buffer(v, 'ascii'),
+    formatter: v => Buffer.from(v, 'ascii'),
     S7WordLen: snap7.S7WLByte
   },
 

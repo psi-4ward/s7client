@@ -126,6 +126,9 @@ class S7Client extends EventEmitter {
       // send a keep alive request every nth aliveCheck cycle
       if(this.opts.alivePkgCycl !== false && cnt >= this.opts.alivePkgCycle) {
         this.client.PlcStatus((err, res) => {
+          if(err) {
+            this.client.Disconnect();
+          }
         });
         cnt = 0;
       }

@@ -227,7 +227,7 @@ class S7Client extends EventEmitter {
           WordLen: datatypes[v.type].S7WordLen,
           DBNumber: v.dbnr,
           Start: v.type === 'BOOL' ? v.start * 8 + v.bit : v.start,
-          Amount: 1
+          Amount: datatypes[v.type].bytes ? datatypes[v.type].bytes : 1, // changed to read size from type
         }
       });
 
@@ -264,7 +264,7 @@ class S7Client extends EventEmitter {
       WordLen: datatypes[v.type].S7WordLen,
       DBNumber: v.dbnr,
       Start: v.type === 'BOOL' ? v.start * 8 + v.bit : v.start,
-      Amount: 1,
+      Amount: datatypes[v.type].bytes ? datatypes[v.type].bytes : 1, // changed to read size from type
       Data: datatypes[v.type].formatter(v.value)
     }));
 

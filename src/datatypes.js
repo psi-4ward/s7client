@@ -86,7 +86,7 @@ const Datatypes = {
    * STRING15
    * @type {S7ClientDatatype}
    */
-   STRING16: { // type to read an entire String[16] from PLC
+   STRING15: { // type to read an entire String[15] from PLC
     bytes: 18,
     parser: (buffer, offset = 0) => buffer.toString('ascii', offset + 2, buffer.readUInt8(1) + 2),
     formatter: v => Buffer.concat([

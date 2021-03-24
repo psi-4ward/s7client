@@ -47,13 +47,13 @@ const Datatypes = {
    * WORD
    * @type {S7ClientDatatype}
    */
-  WORD: _gen(2, 'UInt16BE', snap7.S7WLWord),
+  WORD: _gen(2, 'UInt16BE', snap7.S7WLByte),
 
   /**
    * DWORD
    * @type {S7ClientDatatype}
    */
-  DWORD: _gen(4, 'UInt32BE', snap7.S7WLDWord),
+  DWORD: _gen(4, 'UInt32BE', snap7.S7WLByte),
 
   /**
    * CHAR
@@ -100,19 +100,19 @@ const Datatypes = {
    * INT
    * @type {S7ClientDatatype}
    */
-  INT: _gen(2, 'Int16BE', snap7.S7WLWord),
+  INT: _gen(2, 'Int16BE', snap7.S7WLByte),
 
   /**
    * DINT
    * @type {S7ClientDatatype}
    */
-  DINT: _gen(4, 'Int32BE', snap7.S7WLDWord),
+  DINT: _gen(4, 'Int32BE', snap7.S7WLByte),
 
   /**
    * REAL
    * @type {S7ClientDatatype}
    */
-  REAL: _gen(4, 'FloatBE', snap7.S7WLReal),
+  REAL: _gen(4, 'FloatBE', snap7.S7WLByte),
 };
 
 module.exports = Datatypes;

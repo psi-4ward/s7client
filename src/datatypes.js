@@ -96,6 +96,22 @@ const Datatypes = {
       ]).subarray(0, 18),
     S7WordLen: snap7.S7WLByte
   },
+  
+  
+  /**
+   * STRING20
+   * @type {S7ClientDatatype}
+   */
+   STRING15: { // type to read an entire String[15] from PLC
+    bytes: 22,
+    parser: (buffer, offset = 0) => buffer.toString('ascii', offset + 2, buffer.readUInt8(1) + 2),
+    formatter: v => Buffer.concat([
+        Buffer.from([20, v.length <= 20 ? v.length : 20]),// maximum size | string size
+        Buffer.from(v.length <= 20 ? v : v.substring(0, 20), 'ascii'), // string to buffer
+        Buffer.from([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) // fill zeros
+      ]).subarray(0, 22),
+    S7WordLen: snap7.S7WLByte
+  },
   /**
    * INT
    * @type {S7ClientDatatype}

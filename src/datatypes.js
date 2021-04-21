@@ -47,13 +47,13 @@ const Datatypes = {
    * WORD
    * @type {S7ClientDatatype}
    */
-  WORD: _gen(2, 'UInt16BE', snap7.S7WLWord),
+  WORD: _gen(2, 'UInt16BE', snap7.S7WLByte),
 
   /**
    * DWORD
    * @type {S7ClientDatatype}
    */
-  DWORD: _gen(4, 'UInt32BE', snap7.S7WLDWord),
+  DWORD: _gen(4, 'UInt32BE', snap7.S7WLByte),
 
   /**
    * CHAR
@@ -65,24 +65,70 @@ const Datatypes = {
     formatter: v => Buffer.from(v, 'ascii'),
     S7WordLen: snap7.S7WLByte
   },
+  
+  /**
+   * STRING16
+   * @type {S7ClientDatatype}
+   */
+   STRING16: { // type to read an entire String[16] from PLC
+    bytes: 18,
+    parser: (buffer, offset = 0) => buffer.toString('ascii', offset + 2, buffer.readUInt8(1) + 2),
+    formatter: v => Buffer.concat([
+        Buffer.from([16, v.length <= 16 ? v.length : 16]),// maximum size | string size
+        Buffer.from(v.length <= 15 ? v : v.substring(0, 16), 'ascii'), // string to buffer
+        Buffer.from([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) // fill zeros
+      ]).subarray(0, 18),
+    S7WordLen: snap7.S7WLByte
+  },
 
+  
+  /**
+   * STRING15
+   * @type {S7ClientDatatype}
+   */
+   STRING15: { // type to read an entire String[15] from PLC
+    bytes: 18,
+    parser: (buffer, offset = 0) => buffer.toString('ascii', offset + 2, buffer.readUInt8(1) + 2),
+    formatter: v => Buffer.concat([
+        Buffer.from([15, v.length <= 15 ? v.length : 15]),// maximum size | string size
+        Buffer.from(v.length <= 15 ? v : v.substring(0, 15), 'ascii'), // string to buffer
+        Buffer.from([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) // fill zeros
+      ]).subarray(0, 18),
+    S7WordLen: snap7.S7WLByte
+  },
+  
+  
+  /**
+   * STRING20
+   * @type {S7ClientDatatype}
+   */
+   STRING20: { // type to read an entire String[20] from PLC
+    bytes: 22,
+    parser: (buffer, offset = 0) => buffer.toString('ascii', offset + 2, buffer.readUInt8(1) + 2),
+    formatter: v => Buffer.concat([
+        Buffer.from([20, v.length <= 20 ? v.length : 20]),// maximum size | string size
+        Buffer.from(v.length <= 20 ? v : v.substring(0, 20), 'ascii'), // string to buffer
+        Buffer.from([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) // fill zeros
+      ]).subarray(0, 22),
+    S7WordLen: snap7.S7WLByte
+  },
   /**
    * INT
    * @type {S7ClientDatatype}
    */
-  INT: _gen(2, 'Int16BE', snap7.S7WLWord),
+  INT: _gen(2, 'Int16BE', snap7.S7WLByte),
 
   /**
    * DINT
    * @type {S7ClientDatatype}
    */
-  DINT: _gen(4, 'Int32BE', snap7.S7WLDWord),
+  DINT: _gen(4, 'Int32BE', snap7.S7WLByte),
 
   /**
    * REAL
    * @type {S7ClientDatatype}
    */
-  REAL: _gen(4, 'FloatBE', snap7.S7WLReal),
+  REAL: _gen(4, 'FloatBE', snap7.S7WLByte),
 };
 
 module.exports = Datatypes;
